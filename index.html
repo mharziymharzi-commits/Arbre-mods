@@ -1,0 +1,887 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="موقع زكرياء الخضري للتعلم والاستفادة من دروس التربية الإسلامية">
+  <meta name="theme-color" content="#103b70">
+
+  <title>موقع زكرياء للتعلم والاستفادة</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Cairo", Arial, sans-serif;
+      background: #f1f7fc;
+      color: #26364a;
+      line-height: 2;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    .header {
+      max-width: 1100px;
+      margin: auto;
+      padding: 25px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      flex-wrap: wrap;
+      background: linear-gradient(135deg, #103b70, #087bce, #08a6b5);
+      color: white;
+      border-radius: 0 0 25px 25px;
+      box-shadow: 0 5px 18px #0002;
+    }
+
+    .header img {
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .logo {
+      width: 65px;
+      height: 65px;
+      border: 3px solid white;
+    }
+
+    .header h1 {
+      text-align: center;
+      flex: 1;
+      font-size: clamp(17px, 3vw, 25px);
+    }
+
+    .welcome-gif {
+      width: 150px;
+      max-width: 100%;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      max-width: 1100px;
+      margin: auto;
+      background: #103b70;
+      padding: 12px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      border-radius: 0 0 15px 15px;
+      box-shadow: 0 3px 10px #0002;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 8px 15px;
+      border-radius: 20px;
+      transition: .3s;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      background: #087bce;
+    }
+
+    nav .login {
+      background: #f08080;
+    }
+
+    nav a:focus-visible,
+    button:focus-visible,
+    input:focus-visible {
+      outline: 3px solid #f0b429;
+      outline-offset: 3px;
+    }
+
+    html {
+      scroll-padding-top: 100px;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 25px auto;
+      padding: 0 15px;
+    }
+
+    .welcome {
+      text-align: center;
+      padding: 25px;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 3px 12px #0001;
+      margin-bottom: 30px;
+    }
+
+    .welcome h2 {
+      color: #087bce;
+    }
+
+    .section-title {
+      text-align: center;
+      color: white;
+      background: linear-gradient(135deg, #087bce, #08a6b5);
+      padding: 15px;
+      border-radius: 15px;
+      margin: 35px 0 20px;
+      box-shadow: 0 3px 10px #087bce33;
+    }
+
+    .lesson-title {
+      color: #124d80;
+      background: #e1efff;
+      padding: 12px;
+      text-align: center;
+      border-radius: 12px;
+      margin-top: 25px;
+    }
+
+    .card {
+      background: white;
+      padding: 22px;
+      margin: 20px 0;
+      border-radius: 18px;
+      box-shadow: 0 3px 14px #0001;
+      border: 1px solid #e1edf7;
+      transition: box-shadow .3s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 5px 18px #0002;
+    }
+
+    .card h3 {
+      color: #087bce;
+      border-right: 4px solid #08a6b5;
+      padding-right: 12px;
+    }
+
+    .card h4 {
+      font-weight: 600;
+      font-size: 16px;
+      color: #40566b;
+    }
+
+    .card p {
+      margin: 12px 0;
+    }
+
+    .highlight {
+      background: #e9f7ff;
+      border-right: 5px solid #087bce;
+      padding: 15px;
+      border-radius: 10px;
+    }
+
+    .purple {
+      background: #f0eaff;
+      border-right: 5px solid #9370db;
+    }
+
+    .yellow {
+      background: #fff8df;
+      border-right: 5px solid #e4b83f;
+    }
+
+    .image-wrap {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .image-wrap img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px #0002;
+      transition: .3s;
+    }
+
+    .image-wrap img:hover {
+      transform: scale(1.02);
+    }
+
+    .video-wrap {
+      margin: 20px auto;
+      text-align: center;
+    }
+
+    video {
+      width: 100%;
+      max-width: 650px;
+      border-radius: 15px;
+      background: #111;
+      box-shadow: 0 4px 12px #0002;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      margin: 20px 0;
+      border-radius: 12px;
+    }
+
+    table {
+      width: 100%;
+      min-width: 450px;
+      border-collapse: collapse;
+      background: white;
+      text-align: center;
+    }
+
+    th, td {
+      border: 1px solid #d1e3f3;
+      padding: 12px;
+    }
+
+    th {
+      background: #1767ad;
+      color: white;
+    }
+
+    td {
+      color: #26364a;
+    }
+
+    tr:nth-child(even) td {
+      background: #edf6ff;
+    }
+
+    .quiz {
+      background: linear-gradient(135deg, #ffffff, #e8f5ff);
+      padding: 25px;
+      margin: 25px auto;
+      max-width: 600px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 4px 15px #0002;
+      border: 2px solid #c8e5fa;
+    }
+
+    .quiz input {
+      width: 100%;
+      padding: 13px;
+      border: 2px solid #cbddeb;
+      border-radius: 10px;
+      font-family: inherit;
+      font-size: 16px;
+      text-align: center;
+      outline: none;
+      margin: 10px 0;
+    }
+
+    .quiz input:focus {
+      border-color: #087bce;
+    }
+
+    .quiz button {
+      background: linear-gradient(135deg, #087bce, #08a6b5);
+      color: white;
+      border: none;
+      padding: 12px 35px;
+      border-radius: 12px;
+      font-size: 17px;
+      font-family: inherit;
+      font-weight: bold;
+      cursor: pointer;
+      transition: .3s;
+    }
+
+    .quiz button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 10px #087bce55;
+    }
+
+    #result {
+      font-weight: bold;
+      margin-top: 15px;
+      min-height: 30px;
+    }
+
+    footer {
+      background: #103b70;
+      color: white;
+      text-align: center;
+      padding: 25px 15px;
+      margin-top: 45px;
+      border-radius: 20px 20px 0 0;
+    }
+
+    footer p {
+      margin: 5px;
+    }
+
+    @media (max-width: 600px) {
+      .header {
+        justify-content: center;
+        text-align: center;
+      }
+
+      .header h1 {
+        min-width: 100%;
+        order: 2;
+      }
+
+      .welcome-gif {
+        width: 100px;
+      }
+
+      nav {
+        gap: 5px;
+      }
+
+      nav a {
+        padding: 6px 10px;
+        font-size: 13px;
+      }
+
+      main {
+        padding: 0 10px;
+      }
+
+      .card {
+        padding: 15px;
+      }
+
+      .welcome {
+        padding: 18px;
+      }
+
+      .section-title {
+        font-size: 19px;
+      }
+
+      table {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="header">
+
+    <img
+      src="https://i.ibb.co/HDKdPXBf/images-21146551238438.jpg"
+      width="65"
+      height="65"
+      class="logo"
+      alt="شعار الموقع"
+    >
+
+    <h1>أهلاً بكم في موقع زكرياء الخضري للتعلم والاستفادة</h1>
+
+    <img
+      src="https://i.ibb.co/XZ2G40Bv/image.gif"
+      class="welcome-gif"
+      alt="صورة ترحيبية متحركة"
+    >
+
+  </header>
+
+  <nav aria-label="القائمة الرئيسية">
+    <a href="#lessons">الدروس</a>
+    <a href="#prayer">الصلاة</a>
+    <a href="#fasting">الصيام والتزكية</a>
+    <a href="#exercise">التمارين</a>
+    <a href="#videos">الفيديوهات</a>
+    <a href="cotop.html" class="login">تسجيل الدخول</a>
+  </nav>
+
+  <main>
+
+    <section class="welcome">
+      <h2>السلام عليكم ورحمة الله وبركاته 🌙</h2>
+
+      <p>
+        مرحباً بكم في موقع زكرياء للتعلم والاستفادة.
+        هنا سنتعلم مبادئ التربية الإسلامية والأخلاق الحميدة
+        من خلال دروس مبسطة وصور وفيديوهات وتمارين مفيدة.
+      </p>
+
+      <p>
+        الإسلام مبني على أركان الإسلام وأركان الإيمان،
+        فاحرصوا على تعلمها وفهمها.
+      </p>
+    </section>
+
+    <section id="lessons">
+
+      <h2 class="section-title">📚 مكتبة الدروس التعليمية</h2>
+
+      <div class="card">
+        <h3>الدروس الموجودة في الموقع</h3>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>رقم الدرس</th>
+                <th>عنوان الدرس</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr><td>1</td><td>الصلاة وأحكامها</td></tr>
+              <tr><td>2</td><td>الوضوء</td></tr>
+              <tr><td>3</td><td>كيفية الصلاة</td></tr>
+              <tr><td>4</td><td>الصيام</td></tr>
+              <tr><td>5</td><td>تزكية النفس</td></tr>
+              <tr><td>6</td><td>الأخلاق الإسلامية</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </section>
+
+    <section id="prayer">
+
+      <h2 class="section-title">🕌 الدرس الأول: الصلاة وأحكامها</h2>
+
+      <div class="card">
+
+        <h3>ما هي الصلاة؟</h3>
+
+        <p class="highlight">
+          الصلاة هي الركن الثاني من أركان الإسلام الخمسة،
+          وهي عبادة مخصوصة تتضمن أقوالاً وأفعالاً تبدأ بالتكبير
+          وتنتهي بالتسليم. وهي صلة بين العبد وربه،
+          وتُفرض على المسلم خمس مرات في اليوم والليلة.
+        </p>
+
+        <h3>أولاً: الوضوء</h3>
+
+        <p>قبل الصلاة نتوضأ ونحرص على الطهارة.</p>
+
+        <div class="image-wrap">
+          <img
+            src="https://i.ibb.co/WYP58Nf/images.jpg"
+            alt="صورة تعليمية عن الوضوء"
+            loading="lazy"
+          >
+        </div>
+
+        <h3 class="lesson-title">
+          احرصوا على مراجعة الدرس وحفظه
+        </h3>
+
+        <div class="image-wrap">
+          <img
+            src="https://i.ibb.co/JRQ4hctM/images-1-52668656916961.jpg"
+            alt="صورة تعليمية عن الصلاة"
+            loading="lazy"
+          >
+        </div>
+
+      </div>
+
+      <h2 class="section-title">📖 الدرس الثاني: كيف نصلي؟</h2>
+
+      <div class="card">
+
+        <h3>أولاً: ما يلزم قبل الصلاة (الشروط)</h3>
+
+        <p>
+          • طهارة المكان والثياب: التأكد من نظافة الجسد والملابس ومكان الصلاة من النجاسات.
+        </p>
+
+        <p>
+          • ستر العورة: ارتداء لباس طاهر يستر العورة وفق الأحكام الشرعية.
+        </p>
+
+        <p>
+          • استقبال القبلة: التوجه نحو الكعبة المشرفة في مكة المكرمة.
+        </p>
+
+        <p>
+          • النية: استحضار نية الصلاة في القلب.
+        </p>
+
+        <h3 class="lesson-title purple">
+          ثانياً: كيفية الصلاة خطوة بخطوة
+        </h3>
+
+        <div class="image-wrap">
+          <img
+            src="https://i.ibb.co/sJjWhLd3/images-2.png"
+            alt="خطوات الصلاة"
+            loading="lazy"
+          >
+        </div>
+
+        <h4>
+          1. تكبيرة الإحرام: ارفع يديك وقل: الله أكبر.
+          <br><br>
+          2. القيام والقراءة: اقرأ دعاء الاستفتاح إن شئت،
+          ثم سورة الفاتحة وما تيسر من القرآن.
+          <br><br>
+          3. الركوع: قل الله أكبر واركع وقل: سبحان ربي العظيم.
+          <br><br>
+          4. الرفع من الركوع: قل: سمع الله لمن حمده،
+          ثم ربنا ولك الحمد.
+          <br><br>
+          5. السجود الأول: اسجد وقل: سبحان ربي الأعلى.
+          <br><br>
+          6. الجلوس بين السجدتين: قل: رب اغفر لي.
+          <br><br>
+          7. السجود الثاني: اسجد مرة ثانية.
+          <br><br>
+          ثم قم للركعة التالية وأكمل صلاتك.
+        </h4>
+
+        <h3 class="lesson-title">
+          ثالثاً: التشهد والتسليم
+        </h3>
+
+        <p>
+          في الجلوس الأخير نقرأ التشهد والصلاة الإبراهيمية،
+          ثم نسلم عن اليمين وعن اليسار قائلين:
+          السلام عليكم ورحمة الله.
+        </p>
+
+        <div class="image-wrap">
+          <img
+            src="https://i.ibb.co/0VtVjttp/images-59932561261165.jpg"
+            alt="صورة تعليمية عن الصلاة"
+            loading="lazy"
+          >
+        </div>
+
+        <h3>جدول الصلوات الخمس</h3>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>الصلاة</th>
+                <th>عدد الركعات</th>
+                <th>نوع القراءة</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>الفجر</td>
+                <td>2</td>
+                <td>جهرية</td>
+              </tr>
+
+              <tr>
+                <td>الظهر</td>
+                <td>4</td>
+                <td>سرية</td>
+              </tr>
+
+              <tr>
+                <td>العصر</td>
+                <td>4</td>
+                <td>سرية</td>
+              </tr>
+
+              <tr>
+                <td>المغرب</td>
+                <td>3</td>
+                <td>الأوليان جهراً والثالثة سراً</td>
+              </tr>
+
+              <tr>
+                <td>العشاء</td>
+                <td>4</td>
+                <td>الأوليان جهراً والأخيرتان سراً</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+
+    </section>
+
+    <section id="videos">
+
+      <h2 class="section-title">🎥 فيديو تعليمي عن الصلاة</h2>
+
+      <div class="card">
+        <p>شاهدوا الفيديو للمساعدة على فهم الدرس.</p>
+
+        <div class="video-wrap">
+          <video controls preload="metadata">
+            <source src="video.mp4" type="video/mp4">
+            متصفحك لا يدعم تشغيل الفيديو.
+          </video>
+        </div>
+
+        <p style="text-align:center;">
+          انتهينا من درس الصلاة، ننتقل الآن إلى درس جديد.
+        </p>
+      </div>
+
+    </section>
+
+    <section id="fasting">
+
+      <h2 class="section-title">🌙 الدرس الثالث: الصيام والتزكية</h2>
+
+      <div class="card">
+
+        <h3>أولاً: ما هو الصيام وما فوائده؟</h3>
+
+        <p class="highlight">
+          الصيام هو الإمساك عن المفطرات من طلوع الفجر
+          إلى غروب الشمس تعبداً لله تعالى مع النية.
+        </p>
+
+        <div class="image-wrap">
+          <img
+            src="https://i.ibb.co/0Rv3zTzK/images-4.jpg"
+            alt="صورة عن الصيام"
+            loading="lazy"
+          >
+        </div>
+
+        <div class="image-wrap">
+          <img
+            src="https://i.ibb.co/j9nQh9yw/images-5.jpg"
+            alt="صورة تعليمية عن رمضان"
+            loading="lazy"
+          >
+        </div>
+
+        <h3>أنواع الصيام في الإسلام</h3>
+
+        <p>
+          • فرض: مثل صيام شهر رمضان.
+          <br>
+          • واجب: مثل صيام القضاء والكفارات والنذور.
+          <br>
+          • مستحب: مثل صيام يوم عرفة وعاشوراء والاثنين والخميس.
+          <br>
+          • محرم: مثل صيام يومي عيد الفطر وعيد الأضحى.
+        </p>
+
+        <h3>شروط وجوب الصيام وأركانه</h3>
+
+        <p>
+          • من شروط الوجوب: الإسلام والعقل والبلوغ والقدرة.
+          <br>
+          • النية: ومحلها القلب.
+          <br>
+          • الإمساك عن المفطرات طوال النهار.
+        </p>
+
+        <div class="video-wrap">
+          <video controls preload="metadata">
+            <source src="video_21974454316437.mp4" type="video/mp4">
+            متصفحك لا يدعم تشغيل الفيديو.
+          </video>
+        </div>
+
+        <h3 class="lesson-title yellow">
+          ثانياً: ما هي تزكية النفس وما فوائدها؟
+        </h3>
+
+        <div class="image-wrap">
+          <img
+            src="https://i.ibb.co/C390Wv7D/images-6.jpg"
+            alt="صورة عن تزكية النفس"
+            loading="lazy"
+          >
+        </div>
+
+        <p class="highlight">
+          تزكية النفس هي تطهير النفس من الأخلاق السيئة
+          وتنميتها بالأخلاق الفاضلة والعمل الصالح.
+        </p>
+
+        <h3>الركنان الأساسيان للتزكية</h3>
+
+        <p>
+          1. التخلية: تطهير النفس من الصفات السيئة
+          مثل الكبر والحسد والرياء.
+          <br><br>
+          2. التحلية: تزيين النفس بالفضائل والأخلاق الحسنة
+          مثل الصدق والإخلاص والشجاعة.
+        </p>
+
+        <h3>وسائل تحقيق تزكية النفس</h3>
+
+        <p>
+          • الإخلاص ومراقبة الله.
+          <br>
+          • قراءة القرآن والذكر والدعاء.
+          <br>
+          • المحافظة على الصلوات.
+          <br>
+          • محاسبة النفس.
+          <br>
+          • الابتعاد عن المعاصي.
+        </p>
+
+        <div class="image-wrap">
+          <img
+            src="https://i.ibb.co/7thmcT9n/images-8.jpg"
+            alt="صورة عن الأخلاق الإسلامية"
+            loading="lazy"
+          >
+        </div>
+
+        <h3 style="text-align:center;">
+          إلى اللقاء في الدرس القادم إن شاء الله
+        </h3>
+
+        <div class="image-wrap">
+          <img
+            src="https://i.ibb.co/6Jrmnv7y/images-7.jpg"
+            alt="صورة ختامية"
+            loading="lazy"
+          >
+        </div>
+
+      </div>
+
+    </section>
+
+    <section id="exercise">
+
+      <h2 class="section-title">✏️ اختبر معلوماتك</h2>
+
+      <div class="card">
+
+        <h3>مرحباً بكم في قسم التمارين</h3>
+
+        <p>
+          راجعوا الدروس السابقة جيداً قبل البدء في حل التمارين.
+        </p>
+
+        <h3>الدروس التي يجب مراجعتها</h3>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>رقم</th>
+                <th>اسم الدرس</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr><td>1</td><td>درس الصلاة</td></tr>
+              <tr><td>2</td><td>درس الوضوء</td></tr>
+              <tr><td>3</td><td>درس الصيام</td></tr>
+              <tr><td>4</td><td>درس الزكاة</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="quiz">
+
+          <h3>التمرين الأول 📝</h3>
+
+          <p><strong>كيف تكون صلاة العصر؟</strong></p>
+
+          <p>هل تكون بالسر أم بالجهر؟</p>
+
+          <input
+            type="text"
+            id="tamrin"
+            placeholder="اكتب إجابتك هنا"
+            autocomplete="off"
+            aria-label="اكتب إجابتك عن صلاة العصر"
+          >
+
+          <button type="button" onclick="check()">
+            تحقق من الإجابة
+          </button>
+
+          <p id="result" aria-live="polite"></p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <h3 style="color:white;">موقع زكرياء الخضري للتعلم والاستفادة</h3>
+    <p>نتمنى لكم التوفيق والنجاح في التعلم 🌟</p>
+    <p>والسلام عليكم ورحمة الله وبركاته</p>
+    <p>جميع الحقوق محفوظة © 2026</p>
+  </footer>
+
+  <script>
+    function check() {
+
+      const input = document.getElementById("tamrin");
+
+      const result = document.getElementById("result");
+
+      // إزالة المسافات والتشكيل لتسهيل قبول الإجابة
+      const answer = input.value
+        .trim()
+        .replace(/[\u064B-\u065F\u0670\u0640]/g, "")
+        .replace(/\s+/g, "");
+
+      const correctAnswers = [
+        "السر",
+        "سرا",
+        "سرية",
+        "بالسر",
+        "بسرية"
+      ];
+
+      if (answer === "") {
+
+        result.textContent = "المرجو كتابة الإجابة أولاً!";
+        result.style.color = "#d97706";
+
+      }
+
+      else if (correctAnswers.includes(answer)) {
+
+        result.textContent = "أحسنت! إجابة صحيحة 🎉";
+        result.style.color = "#16803c";
+
+      }
+
+      else {
+
+        result.textContent = "حاول مرة أخرى، راجع درس الصلاة 📚";
+        result.style.color = "#dc2626";
+
+      }
+
+    }
+
+    // تشغيل التحقق عند الضغط على زر Enter
+    document.getElementById("tamrin")
+      .addEventListener("keydown", function(event) {
+
+        if (event.key === "Enter") {
+          event.preventDefault();
+          check();
+        }
+
+      });
+
+  </script>
+
+</body>
+</html>
