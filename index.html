@@ -1,14 +1,11 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="موقع زكرياء الخضري للتعلم والاستفادة من دروس التربية الإسلامية">
   <meta name="theme-color" content="#103b70">
-
-  <title>موقع زكرياء للتعلم والاستفادة</title>
+  <title>موقع زكرياء الخضري للتعلم والاستفادة</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,6 +15,10 @@
     * {
       box-sizing: border-box;
       scroll-behavior: smooth;
+    }
+
+    html {
+      scroll-padding-top: 100px;
     }
 
     body {
@@ -69,6 +70,16 @@
       max-width: 100%;
     }
 
+    .english-welcome {
+      width: 100%;
+      text-align: center;
+      direction: ltr;
+      color: white;
+      font-size: 15px;
+      font-weight: bold;
+      margin: 0;
+    }
+
     nav {
       position: sticky;
       top: 0;
@@ -108,10 +119,6 @@
     input:focus-visible {
       outline: 3px solid #f0b429;
       outline-offset: 3px;
-    }
-
-    html {
-      scroll-padding-top: 100px;
     }
 
     main {
@@ -392,6 +399,10 @@
       alt="صورة ترحيبية متحركة"
     >
 
+    <p class="english-welcome">
+      Welcome to Zakaria El Khadri's Website for Learning Islamic Education!
+    </p>
+
   </header>
 
   <nav aria-label="القائمة الرئيسية">
@@ -477,9 +488,7 @@
           >
         </div>
 
-        <h3 class="lesson-title">
-          احرصوا على مراجعة الدرس وحفظه
-        </h3>
+        <h3 class="lesson-title">احرصوا على مراجعة الدرس وحفظه</h3>
 
         <div class="image-wrap">
           <img
@@ -513,9 +522,7 @@
           • النية: استحضار نية الصلاة في القلب.
         </p>
 
-        <h3 class="lesson-title purple">
-          ثانياً: كيفية الصلاة خطوة بخطوة
-        </h3>
+        <h3 class="lesson-title purple">ثانياً: كيفية الصلاة خطوة بخطوة</h3>
 
         <div class="image-wrap">
           <img
@@ -545,9 +552,7 @@
           ثم قم للركعة التالية وأكمل صلاتك.
         </h4>
 
-        <h3 class="lesson-title">
-          ثالثاً: التشهد والتسليم
-        </h3>
+        <h3 class="lesson-title">ثالثاً: التشهد والتسليم</h3>
 
         <p>
           في الجلوس الأخير نقرأ التشهد والصلاة الإبراهيمية،
@@ -576,35 +581,11 @@
             </thead>
 
             <tbody>
-              <tr>
-                <td>الفجر</td>
-                <td>2</td>
-                <td>جهرية</td>
-              </tr>
-
-              <tr>
-                <td>الظهر</td>
-                <td>4</td>
-                <td>سرية</td>
-              </tr>
-
-              <tr>
-                <td>العصر</td>
-                <td>4</td>
-                <td>سرية</td>
-              </tr>
-
-              <tr>
-                <td>المغرب</td>
-                <td>3</td>
-                <td>الأوليان جهراً والثالثة سراً</td>
-              </tr>
-
-              <tr>
-                <td>العشاء</td>
-                <td>4</td>
-                <td>الأوليان جهراً والأخيرتان سراً</td>
-              </tr>
+              <tr><td>الفجر</td><td>2</td><td>جهرية</td></tr>
+              <tr><td>الظهر</td><td>4</td><td>سرية</td></tr>
+              <tr><td>العصر</td><td>4</td><td>سرية</td></tr>
+              <tr><td>المغرب</td><td>3</td><td>الأوليان جهراً والثالثة سراً</td></tr>
+              <tr><td>العشاء</td><td>4</td><td>الأوليان جهراً والأخيرتان سراً</td></tr>
             </tbody>
           </table>
         </div>
@@ -692,9 +673,7 @@
           </video>
         </div>
 
-        <h3 class="lesson-title yellow">
-          ثانياً: ما هي تزكية النفس وما فوائدها؟
-        </h3>
+        <h3 class="lesson-title yellow">ثانياً: ما هي تزكية النفس وما فوائدها؟</h3>
 
         <div class="image-wrap">
           <img
@@ -828,12 +807,9 @@
 
   <script>
     function check() {
-
       const input = document.getElementById("tamrin");
-
       const result = document.getElementById("result");
 
-      // إزالة المسافات والتشكيل لتسهيل قبول الإجابة
       const answer = input.value
         .trim()
         .replace(/[\u064B-\u065F\u0670\u0640]/g, "")
@@ -844,43 +820,29 @@
         "سرا",
         "سرية",
         "بالسر",
-        "بسرية"
+        "بسرية",
+        "بالسرية"
       ];
 
       if (answer === "") {
-
         result.textContent = "المرجو كتابة الإجابة أولاً!";
         result.style.color = "#d97706";
-
-      }
-
-      else if (correctAnswers.includes(answer)) {
-
+      } else if (correctAnswers.includes(answer)) {
         result.textContent = "أحسنت! إجابة صحيحة 🎉";
         result.style.color = "#16803c";
-
-      }
-
-      else {
-
+      } else {
         result.textContent = "حاول مرة أخرى، راجع درس الصلاة 📚";
         result.style.color = "#dc2626";
-
       }
-
     }
 
-    // تشغيل التحقق عند الضغط على زر Enter
     document.getElementById("tamrin")
       .addEventListener("keydown", function(event) {
-
         if (event.key === "Enter") {
           event.preventDefault();
           check();
         }
-
       });
-
   </script>
 
 </body>
