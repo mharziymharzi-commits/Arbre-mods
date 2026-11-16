@@ -1,10 +1,14 @@
+
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="موقع زكرياء الخضري للتعلم والاستفادة من دروس التربية الإسلامية">
   <meta name="theme-color" content="#103b70">
+
   <title>موقع زكرياء الخضري للتعلم والاستفادة</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,10 +19,6 @@
     * {
       box-sizing: border-box;
       scroll-behavior: smooth;
-    }
-
-    html {
-      scroll-padding-top: 100px;
     }
 
     body {
@@ -36,7 +36,7 @@
     .header {
       max-width: 1100px;
       margin: auto;
-      padding: 25px 20px;
+      padding: 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -48,15 +48,12 @@
       box-shadow: 0 5px 18px #0002;
     }
 
-    .header img {
-      border-radius: 50%;
-      object-fit: cover;
-    }
-
     .logo {
       width: 65px;
       height: 65px;
       border: 3px solid white;
+      border-radius: 50%;
+      object-fit: cover;
     }
 
     .header h1 {
@@ -66,18 +63,8 @@
     }
 
     .welcome-gif {
-      width: 150px;
-      max-width: 100%;
-    }
-
-    .english-welcome {
-      width: 100%;
-      text-align: center;
-      direction: ltr;
-      color: white;
-      font-size: 15px;
-      font-weight: bold;
-      margin: 0;
+      width: 120px;
+      border-radius: 12px;
     }
 
     nav {
@@ -91,7 +78,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
       flex-wrap: wrap;
       border-radius: 0 0 15px 15px;
       box-shadow: 0 3px 10px #0002;
@@ -100,7 +87,7 @@
     nav a {
       color: white;
       text-decoration: none;
-      padding: 8px 15px;
+      padding: 7px 13px;
       border-radius: 20px;
       transition: .3s;
       font-weight: bold;
@@ -111,10 +98,10 @@
     }
 
     nav .login {
-      background: #f08080;
+      background: #e87979;
     }
 
-    nav a:focus-visible,
+    a:focus-visible,
     button:focus-visible,
     input:focus-visible {
       outline: 3px solid #f0b429;
@@ -138,6 +125,17 @@
 
     .welcome h2 {
       color: #087bce;
+    }
+
+    .announcement {
+      max-width: 1000px;
+      margin: 15px auto;
+      padding: 10px;
+      background: #e1efff;
+      color: #103b70;
+      text-align: center;
+      font-weight: bold;
+      border-radius: 12px;
     }
 
     .section-title {
@@ -166,7 +164,7 @@
       border-radius: 18px;
       box-shadow: 0 3px 14px #0001;
       border: 1px solid #e1edf7;
-      transition: box-shadow .3s ease;
+      transition: box-shadow .3s;
     }
 
     .card:hover {
@@ -183,10 +181,6 @@
       font-weight: 600;
       font-size: 16px;
       color: #40566b;
-    }
-
-    .card p {
-      margin: 12px 0;
     }
 
     .highlight {
@@ -216,11 +210,6 @@
       height: auto;
       border-radius: 15px;
       box-shadow: 0 4px 12px #0002;
-      transition: .3s;
-    }
-
-    .image-wrap img:hover {
-      transform: scale(1.02);
     }
 
     .video-wrap {
@@ -260,16 +249,12 @@
       color: white;
     }
 
-    td {
-      color: #26364a;
-    }
-
     tr:nth-child(even) td {
       background: #edf6ff;
     }
 
     .quiz {
-      background: linear-gradient(135deg, #ffffff, #e8f5ff);
+      background: linear-gradient(135deg, #fff, #e8f5ff);
       padding: 25px;
       margin: 25px auto;
       max-width: 600px;
@@ -287,29 +272,28 @@
       font-family: inherit;
       font-size: 16px;
       text-align: center;
-      outline: none;
       margin: 10px 0;
     }
 
-    .quiz input:focus {
-      border-color: #087bce;
-    }
-
-    .quiz button {
+    .quiz button,
+    .site-button {
+      display: inline-block;
       background: linear-gradient(135deg, #087bce, #08a6b5);
       color: white;
       border: none;
-      padding: 12px 35px;
+      padding: 12px 25px;
       border-radius: 12px;
-      font-size: 17px;
+      font-size: 16px;
       font-family: inherit;
       font-weight: bold;
       cursor: pointer;
+      text-decoration: none;
       transition: .3s;
     }
 
-    .quiz button:hover {
-      transform: translateY(-3px);
+    .quiz button:hover,
+    .site-button:hover {
+      transform: translateY(-2px);
       box-shadow: 0 4px 10px #087bce55;
     }
 
@@ -332,6 +316,11 @@
       margin: 5px;
     }
 
+    .site-link {
+      text-align: center;
+      margin: 30px 0;
+    }
+
     @media (max-width: 600px) {
       .header {
         justify-content: center;
@@ -344,7 +333,7 @@
       }
 
       .welcome-gif {
-        width: 100px;
+        width: 90px;
       }
 
       nav {
@@ -352,7 +341,7 @@
       }
 
       nav a {
-        padding: 6px 10px;
+        padding: 6px 9px;
         font-size: 13px;
       }
 
@@ -376,6 +365,13 @@
         font-size: 14px;
       }
     }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+      }
+    }
   </style>
 </head>
 
@@ -384,24 +380,18 @@
   <header class="header">
 
     <img
-      src="https://i.ibb.co/HDKdPXBf/images-21146551238438.jpg"
-      width="65"
-      height="65"
+      src="https://i.ibb.co/HDKdPXBf/image1146551238438.jpg"
       class="logo"
       alt="شعار الموقع"
     >
 
-    <h1>أهلاً بكم في موقع زكرياء الخضري للتعلم والاستفادة</h1>
+    <h1>مرحباً بكم في موقع زكرياء الخضري للتعلم والاستفادة</h1>
 
     <img
       src="https://i.ibb.co/XZ2G40Bv/image.gif"
       class="welcome-gif"
       alt="صورة ترحيبية متحركة"
     >
-
-    <p class="english-welcome">
-      Welcome to Zakaria El Khadri's Website for Learning Islamic Education!
-    </p>
 
   </header>
 
@@ -411,8 +401,13 @@
     <a href="#fasting">الصيام والتزكية</a>
     <a href="#exercise">التمارين</a>
     <a href="#videos">الفيديوهات</a>
-    <a href="https://mharziymharzi-commits.github.io/Arbr-longe/" class="login">تسجيل الدخول</a>
+    <a href="#hijra"> الهجرة</a>
+    <a href="cotop.html" class="login">تسجيل الدخول</a>
   </nav>
+
+  <div class="announcement">
+    مرحباً بكم في موقع زكرياء الخضري 🌟 نتمنى لكم رحلة تعليمية ممتعة!
+  </div>
 
   <main>
 
@@ -454,6 +449,7 @@
               <tr><td>4</td><td>الصيام</td></tr>
               <tr><td>5</td><td>تزكية النفس</td></tr>
               <tr><td>6</td><td>الأخلاق الإسلامية</td></tr>
+              <tr><td>7</td><td>الهجرة النبوية</td></tr>
             </tbody>
           </table>
         </div>
@@ -506,21 +502,10 @@
 
         <h3>أولاً: ما يلزم قبل الصلاة (الشروط)</h3>
 
-        <p>
-          • طهارة المكان والثياب: التأكد من نظافة الجسد والملابس ومكان الصلاة من النجاسات.
-        </p>
-
-        <p>
-          • ستر العورة: ارتداء لباس طاهر يستر العورة وفق الأحكام الشرعية.
-        </p>
-
-        <p>
-          • استقبال القبلة: التوجه نحو الكعبة المشرفة في مكة المكرمة.
-        </p>
-
-        <p>
-          • النية: استحضار نية الصلاة في القلب.
-        </p>
+        <p>• طهارة المكان والثياب: التأكد من نظافة الجسد والملابس ومكان الصلاة من النجاسات.</p>
+        <p>• ستر العورة: ارتداء لباس طاهر يستر العورة وفق الأحكام الشرعية.</p>
+        <p>• استقبال القبلة: التوجه نحو الكعبة المشرفة في مكة المكرمة.</p>
+        <p>• النية: استحضار نية الصلاة في القلب.</p>
 
         <h3 class="lesson-title purple">ثانياً: كيفية الصلاة خطوة بخطوة</h3>
 
@@ -744,9 +729,7 @@
 
         <h3>مرحباً بكم في قسم التمارين</h3>
 
-        <p>
-          راجعوا الدروس السابقة جيداً قبل البدء في حل التمارين.
-        </p>
+        <p>راجعوا الدروس السابقة جيداً قبل البدء في حل التمارين.</p>
 
         <h3>الدروس التي يجب مراجعتها</h3>
 
@@ -773,7 +756,6 @@
           <h3>التمرين الأول 📝</h3>
 
           <p><strong>كيف تكون صلاة العصر؟</strong></p>
-
           <p>هل تكون بالسر أم بالجهر؟</p>
 
           <input
@@ -796,17 +778,101 @@
 
     </section>
 
+    <section class="card" id="hijra">
+
+      <h2 class="section-title">📜 درس الهجرة النبوية والدعوة السرية والجهرية</h2>
+
+      <h3>الهجرة النبوية</h3>
+
+      <p>
+        الهجرة النبوية الشريفة هي انتقال النبي محمد صلى الله عليه وسلم
+        وأصحابه من مكة المكرمة إلى يثرب (المدينة المنورة) سنة 622م.
+        وهي نقطة تحول كبرى في تاريخ الإسلام وبداية التقويم الهجري.
+      </p>
+
+      <h3>أبرز أسباب الهجرة</h3>
+
+      <ol>
+        <li>
+          <strong>إيذاء قريش:</strong>
+          <p>اشتداد الأذى والتعذيب ضد المسلمين في مكة المكرمة.</p>
+        </li>
+
+        <li>
+          <strong>تآمر قريش:</strong>
+          <p>تآمر قريش على النبي صلى الله عليه وسلم.</p>
+        </li>
+
+        <li>
+          <strong>بيعة العقبة الثانية:</strong>
+          <p>تعهد الأنصار من أهل يثرب بحماية النبي صلى الله عليه وسلم ونصرته.</p>
+        </li>
+
+        <li>
+          <strong>بناء الدولة:</strong>
+          <p>البحث عن بيئة آمنة لإقامة دعوة الإسلام وتأسيس المجتمع الإسلامي.</p>
+        </li>
+      </ol>
+    </section>
+      <div class="image-wrap">
+        <img
+          src="https://i.ibb.co/QFzYPxNX/images-10.jpg"
+          width="250"
+          alt="صورة عن الهجرة النبوية"
+          loading="lazy"
+        >
+
+        <img
+          src="https://i.ibb.co/QFhQdQSS/images-11.jpg"
+          width="250"
+          alt="صورة تعليمية عن الهجرة"
+          loading="lazy"
+        >
+      </div>
+
+      <div class="video-wrap">
+        <video controls preload="metadata">
+          <source src="klopm.mp4" type="video/mp4">
+          متصفحك لا يدعم تشغيل الفيديو.
+        </video>
+      </div>
+
+      <hr>
+
+      <h3>نهاية الموقع 🌟</h3>
+
+      <p>
+        هذه هي نهاية موقعنا. شكراً لكم على متابعتكم،
+        ولا تنسوا مشاركة الموقع مع من تحبون.
+        كان معكم زكرياء، والسلام عليكم ورحمة الله وبركاته.
+      </p>
+
+      <p>
+        من يرغب في تعلم الإنجليزية أو تجربة ألعاب تعليمية
+        أو تعلم البرمجة، يمكنه زيارة الموقع الآخر.
+      </p>
+
+    
+
+    <div class="site-link">
+      <a class="site-button" href="ta3lom.html">
+        🌐 موقع تعلم الإنجليزية
+      </a>
+    </div>
+
   </main>
 
   <footer>
-    <h3 style="color:white;">موقع زكرياء الخضري للتعلم والاستفادة</h3>
+    <h3>موقع زكرياء الخضري للتعلم والاستفادة</h3>
     <p>نتمنى لكم التوفيق والنجاح في التعلم 🌟</p>
     <p>والسلام عليكم ورحمة الله وبركاته</p>
     <p>جميع الحقوق محفوظة © 2026</p>
+    <p>صمم الموقع من طرف زكرياء الخضري</p>
   </footer>
 
   <script>
     function check() {
+
       const input = document.getElementById("tamrin");
       const result = document.getElementById("result");
 
@@ -820,28 +886,36 @@
         "سرا",
         "سرية",
         "بالسر",
-        "بسرية",
-        "بالسرية"
+        "بسرية"
       ];
 
       if (answer === "") {
+
         result.textContent = "المرجو كتابة الإجابة أولاً!";
         result.style.color = "#d97706";
+
       } else if (correctAnswers.includes(answer)) {
+
         result.textContent = "أحسنت! إجابة صحيحة 🎉";
         result.style.color = "#16803c";
+
       } else {
+
         result.textContent = "حاول مرة أخرى، راجع درس الصلاة 📚";
         result.style.color = "#dc2626";
+
       }
+
     }
 
     document.getElementById("tamrin")
       .addEventListener("keydown", function(event) {
+
         if (event.key === "Enter") {
           event.preventDefault();
           check();
         }
+
       });
   </script>
 
